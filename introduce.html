@@ -4,58 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>照片點及次數</title>
-<style>
-    .container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .photo {
-        margin: 20px;
-        transition: transform 0.3s ease;
-    }
-
-    .photo img {
-        width: 200px;
-        height: auto;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .photo:hover img {
-        transform: scale(1.1);
-    }
-
-    .name {
-        font-size: 20px;
-        color: #071bef;
-        margin-left: 30px;
-    }
-
-    .description {
-        margin-left: 13px;
-    }
-
-    .click-count {
-        color: blue;
-        margin-left: 65px;
-    }
-
-    .title {
-        text-align: center;
-        font-size: 24px;
-        margin-top: 20px;
-        font-weight: bold;
-    }
-
-    .reset-button {
-        display: block;
-        margin: 20px auto;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-</style>
+<link rel="stylesheet" href="into.css">
 </head>
 <body>
 
@@ -64,7 +13,7 @@
 <div class="container">
     <div class="photo" id="photo1">
         <img src="easy_weeds.jpg" alt="照片1">
-        <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;溫室雜草</div>
+        <div class="name">溫室雜草</div>
         <div class="description">2019 年自台中發跡的三件式樂團，2021 年初發行《春天有腳》EP 通過三首追尋衝浪感、體現幽默與浪漫的鬆弛創作，搭配反差十足的躁動演出現場，以扎實、酥麻的破音聲響震耳彈奏，帶給聽眾最新鮮的聽覺刺激。</div>
     </div>
     <div class="photo" id="photo2">
@@ -74,53 +23,29 @@
     </div>
     <div class="photo" id="photo3">
         <img src="mangoJump.jpg" alt="照片3">
-        <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;芒果醬</div>
+        <div class="name">芒果醬</div>
         <div class="description">音樂風格以流行龐克為主，佐以民謠搖滾，毫無保留的直白吉他 Riff、搭配主唱把人生梭哈般的高能演唱，負責低音組的鼓與貝斯，則擔任歌曲中的節奏擔當，擅長創造燃點極低、易燃易爆炸的爽快節奏，亦能在抒情曲中緩下能量，因應曲目風格與故事帶動氛圍。</div>
     </div>
     <div class="photo" id="photo4">
         <img src="mixer.jpg" alt="照片4">
-        <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;麋先生</div>
+        <div class="name">麋先生</div>
         <div class="description">麋先生淋漓暢快的曲風，搭配著如詩迷幻意識張顯的詞曲風格，加上主唱獨特的嗓音和爆發力十足的舞台魅力，迅速引起各界矚目，以專輯《馬戲團運動》首度入圍第25屆金曲獎，並獲得最佳樂團獎。</div>
     </div>
     <div class="photo" id="photo5">
         <img src="PAPUN_BAND.jpg" alt="照片5">
-        <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;怕胖團</div>
+        <div class="name">怕胖團</div>
         <div class="description">怕胖團的歌曲從來不是要賦予聽者任何大道理，而是透過真實呈現與紀錄，讓一切生命中的體驗有存在的意義，談論念書的煩躁、同學間的胡鬧、對於友情的重視又或是迎接未來的問號，總是完整地把生活中的自己保存在音樂中。</div>
     </div>
     <div class="photo" id="photo6">
         <img src="Wendy_Wander.jpg" alt="照片6">
-        <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;溫蒂漫步</div>
+        <div class="name">溫蒂漫步</div>
         <div class="description">2020年溫蒂漫步以一首〈我想和你一起〉孤峰突起，「我想和你一起，趕走天上的烏雲，從那沙灘上驚醒……」輕輕柔柔的呢喃，在疫情亂世中帶來了一抹溫暖與浪漫。這首從編曲至歌詞都浪漫到無可救藥的「神曲」。</div>
     </div>
 </div>
 
 <button class="reset-button" onclick="resetVotes()">重置投票</button>
 
-<script>
-    var clickCounts = [0, 0, 0, 0, 0, 0];
-
-    function photoClicked(index) {
-        clickCounts[index]++;
-        document.getElementById("clickCount" + index).innerText = "投票: " + clickCounts[index];
-    }
-
-    function resetVotes() {
-        clickCounts = [0, 0, 0, 0, 0, 0];
-        for (var i = 0; i < 6; i++) {
-            document.getElementById("clickCount" + i).innerText = "投票: 0";
-        }
-    }
-
-    for (var i = 0; i < 6; i++) {
-        document.getElementById("photo" + (i + 1)).innerHTML += "<br><div class='click-count' id='clickCount" + i + "'>投票: 0</div>";
-        var imgElement = document.querySelector("#photo" + (i + 1) + " img");
-        imgElement.addEventListener("click", (function (index) {
-            return function () {
-                photoClicked(index);
-            };
-        })(i));
-    }
-</script>
+<script src="into.js"></script>
 
 </body>
 </html>

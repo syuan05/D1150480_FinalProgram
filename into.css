@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+}
+
+.photo {
+    margin: 20px;
+    text-align: center;
+}
+
+.photo img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.photo img:hover {
+    transform: scale(1.2);
+}
+
+.name {
+    font-size: 20px;
+    color: #071bef;
+    margin-top: 10px;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.click-count {
+    color: blue;
+    margin-top: 10px;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.reset-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
