@@ -13,7 +13,7 @@ function resetVotes() {
 }
 
 for (var i = 0; i < 6; i++) {
-    document.getElementById("photo" + (i + 1)).innerHTML += "<br><div class='click-count' id='clickCount" + i + "'>投票: 0</div>";
+    document.getElementById("photo" + (i + 1)).innerHTML += "<br><div class='click-count' id='clickCount" + i + "'>票數: 0</div>";
     var imgElement = document.querySelector("#photo" + (i + 1) + " img");
     imgElement.addEventListener("click", (function (index) {
         return function () {

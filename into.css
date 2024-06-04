@@ -1,3 +1,6 @@
+body {
+    background-color: #c1cbd7; /* 背景顏色 */
+}
 .container {
     display: flex;
 }
@@ -20,7 +23,7 @@
 
 .name {
     font-size: 20px;
-    color: #071bef;
+    color: #7e9295;
     margin-top: 10px;
 }
 
@@ -29,7 +32,7 @@
 }
 
 .click-count {
-    color: blue;
+    color: #939391;
     margin-top: 10px;
 }
 
