@@ -2,13 +2,12 @@ var clickCounts = [0, 0, 0, 0, 0, 0];
 
 function photoClicked(index) {
     clickCounts[index]++;
-    document.getElementById("clickCount" + index).innerText = "投票: " + clickCounts[index];
+    document.getElementById("clickCount" + index).innerText = "票數: " + clickCounts[index];
 }
-
 function resetVotes() {
     clickCounts = [0, 0, 0, 0, 0, 0];
     for (var i = 0; i < 6; i++) {
-        document.getElementById("clickCount" + i).innerText = "投票: 0";
+        document.getElementById("clickCount" + i).innerText = "票數: 0";
     }
 }
 
