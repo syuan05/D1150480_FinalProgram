@@ -1,0 +1,106 @@
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+}
+.message1, .message2, .message3, .link1, .link2, .link3, .link4 {
+    position: fixed;
+    font-family: Didot, serif;
+    color: white;
+}
+.message1 {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+.message2 {
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+.message3 {
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+.content3 {
+    position: absolute;
+    top: 205px; /* 125px (top of audio-controls) + 30px (height of audio-controls) */
+    left: 41%;
+    color: rgb(201, 201, 201);
+    font-size: 13px;
+}
+  
+.content4 {
+    position: absolute;
+    top: 235px; /* Adjust as needed */
+    left: 41%;
+    color: rgb(201, 201, 201);
+    font-size: 13px;
+}
+
+input[type="text"]{
+    position: absolute;
+    top: 202px;
+    width: 200px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    left: 45%;
+    box-sizing: border-box;
+}
+input[type="password"] {
+    position: absolute;
+    top: 232px;
+    width: 200px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    left: 45%;
+    box-sizing: border-box;
+  }
+
+
+
+
+.login {
+    width: 100px;
+    height: 30px;
+    color: white;
+    font-size: 15;
+    background-color: #116962;
+    border-radius: 5px;
+    position: absolute;
+    top: 270px;
+    left: 47%;
+}
+.link1 {
+    top: 650px;
+    left: 40%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+.link2 {
+    top: 650px;
+    left: 46%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+.link3 {
+    top: 650px;
+    left: 52%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+.link4 {
+    top: 650px;
+    left: 59.5%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+.audio-controls {
+    position: fixed;
+    top: 125px;
+    left: 50%;
+    transform: translateX(-50%);
+}
