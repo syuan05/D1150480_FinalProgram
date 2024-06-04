@@ -7,32 +7,59 @@
 <style>
     .container {
         display: flex;
+        justify-content: center;
     }
 
     .photo {
         margin: 20px;
+        transition: transform 0.3s ease;
     }
 
     .photo img {
         width: 200px;
         height: auto;
         cursor: pointer;
+        transition: transform 0.3s ease;
     }
+
+    .photo:hover img {
+        transform: scale(1.1);
+    }
+
     .name {
         font-size: 20px;
         color: #071bef;
         margin-left: 30px;
     }
+
     .description {
         margin-left: 13px;
     }
-    .click-count{
+
+    .click-count {
         color: blue;
         margin-left: 65px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .reset-button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
     }
 </style>
 </head>
 <body>
+
+<div class="title">為自己喜歡的樂團投票吧！</div>
 
 <div class="container">
     <div class="photo" id="photo1">
@@ -67,18 +94,27 @@
     </div>
 </div>
 
+<button class="reset-button" onclick="resetVotes()">重置投票</button>
+
 <script>
     var clickCounts = [0, 0, 0, 0, 0, 0];
 
     function photoClicked(index) {
         clickCounts[index]++;
-        document.getElementById("clickCount" + index).innerText = "投票:" + clickCounts[index];
+        document.getElementById("clickCount" + index).innerText = "投票: " + clickCounts[index];
+    }
+
+    function resetVotes() {
+        clickCounts = [0, 0, 0, 0, 0, 0];
+        for (var i = 0; i < 6; i++) {
+            document.getElementById("clickCount" + i).innerText = "投票: 0";
+        }
     }
 
     for (var i = 0; i < 6; i++) {
-        var photoDiv = document.getElementById("photo" + (i + 1));
-        photoDiv.innerHTML += "<br><div class='click-count' id='clickCount" + i + "'>投票: 0</div>";
-        photoDiv.addEventListener("click", (function (index) {
+        document.getElementById("photo" + (i + 1)).innerHTML += "<br><div class='click-count' id='clickCount" + i + "'>投票: 0</div>";
+        var imgElement = document.querySelector("#photo" + (i + 1) + " img");
+        imgElement.addEventListener("click", (function (index) {
             return function () {
                 photoClicked(index);
             };
